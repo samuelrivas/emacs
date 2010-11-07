@@ -21,6 +21,7 @@
 (show-paren-mode t)
 (blink-cursor-mode -1)
 (auto-fill-mode t)
+(setq user-full-name "Samuel Rivas")
 
 ; Key bindings
 (global-set-key "\M-g" 'goto-line)
@@ -40,6 +41,14 @@
 (setq auto-mode-alist
       (cons '("mutt-.*" . mail-mode) auto-mode-alist))
 
+(setq auto-mode-alist
+      (cons '("svn-commit*" . text-mode)
+	    auto-mode-alist))
+
+(setq auto-mode-alist
+      (cons '("COMMIT*" . text-mode)
+	    auto-mode-alist))
+
 ; Mail mode
 (defun my-mail-mode-hook ()
   "Mail mode hook"
@@ -57,7 +66,9 @@
 
 (defun my-erlang-mode-hook ()
   "Erlang mode hook"
-  (setq indent-tabs-mode nil))
+  (setq indent-tabs-mode nil)
+  (auto-fill-mode)
+  (flyspell-prog-mode))
 
 (add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
 
@@ -84,6 +95,8 @@
 
 ; C mode
 (defun my-c-mode-hook ()
+  (flyspell-prog-mode)
+  (auto-fill-mode)
   (setq comment-start "//")
   (setq comment-end "")
   (local-set-key "\C-c\C-u" 'uncomment-region))
@@ -104,13 +117,6 @@
 
 (add-hook 'text-mode-hook 'my-text-mode-hook)
 
-(setq auto-mode-alist
-      (cons '("svn-commit*" . text-mode)
-	    auto-mode-alist))
-
-(setq auto-mode-alist
-      (cons '("COMMIT*" . text-mode)
-	    auto-mode-alist))
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
