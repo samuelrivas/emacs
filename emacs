@@ -74,9 +74,10 @@
 (add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
 
 ;; (add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
-(setq load-path (cons "/home/samuel/local/src/erlware-mode" load-path))
+(setq load-path (cons "/home/samuel/local/root_R14B/lib/erlang/lib/tools-2.6.6.1/emacs" load-path))
 (setq load-path (cons "/home/samuel/local/share/wrangler/elisp" load-path))
 (setq erlang-skel-mail-address "samuel.rivas@lambdastream.com")
+;(load-file "/home/samuel/local/share/wrangler/elisp/graphviz-dot-mode.el")
 (require 'erlang-start)
 (require 'wrangler)
 
@@ -123,8 +124,9 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(dirs-to-monitor (quote ("/home/samuel/projects/Erlambda/lib/testframe/trunk" "/home/samuel/projects/Erlambda/lib/lambdastd/trunk" "/home/samuel/projects/Erlambda/lib/lamprea/trunk" "/home/samuel/tmp/clam_test_rework/lib/lambdastd")))
- '(refac-monitor-repository-path "/home/samuel/local/var/wrangler/monitor"))
+ '(dirs-to-monitor (quote ("/home/samuel/projects/Erlambda/lib/testframe/trunk" "/home/samuel/projects/Erlambda/lib/lambdastd/trunk" "/home/samuel/projects/Erlambda/lib/lamprea/trunk" "/home/samuel/tmp/clam_test_rework/lib/lambdastd" "/home/samuel/projects/psi_stuff/lib")))
+ '(refac-monitor-repository-path "/home/samuel/local/var/wrangler/monitor")
+ '(version-control-system (quote Git)))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
