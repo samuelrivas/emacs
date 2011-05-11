@@ -99,6 +99,7 @@
 (defun my-c-mode-hook ()
   (flyspell-prog-mode)
   (auto-fill-mode)
+  (setq indent-tabs-mode nil)
   (setq comment-start "//")
   (setq comment-end "")
   (local-set-key "\C-c\C-u" 'uncomment-region))
