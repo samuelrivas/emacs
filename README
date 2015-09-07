@@ -1,1 +1,4 @@
-This is just an amalgama of historical hotfixes. Don't rely to much on it
+Don't use this, it is old and deprecated (apart from terrible)
+
+I keep my emacs config in nix right now in
+https://github.com/samuelrivas/custom-pkgs
